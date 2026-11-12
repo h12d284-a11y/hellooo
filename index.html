@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a33">
+  <title>BT×DS 저혈당 위험 분석</title>
+  <style>
+    :root{font-family:Inter,"Noto Sans KR",system-ui,-apple-system,Segoe UI,sans-serif;color:#172033;background:#f3f6fb;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0}.wrap{max-width:1120px;margin:auto;padding:28px 20px 60px}
+    header{padding:42px;border-radius:24px;color:white;background:linear-gradient(125deg,#101a33,#2349a5);box-shadow:0 18px 45px #182b5630}
+    .eyebrow{font-size:.85rem;letter-spacing:.1em;color:#bfdbfe;font-weight:700}h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.15;margin:12px 0}header p{max-width:720px;color:#e3eaff}
+    .button{display:inline-block;margin-top:12px;padding:11px 16px;border-radius:10px;background:#fff;color:#173b91;text-decoration:none;font-weight:700}
+    section,.panel{background:#fff;border:1px solid #e4e9f2;border-radius:18px;padding:24px;margin-top:22px;box-shadow:0 8px 24px #17203308}
+    h2{margin:0 0 14px;font-size:1.35rem}.muted{color:#64748b;font-size:.93rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+    .card{padding:18px;border:1px solid #e7ebf3;border-radius:14px;background:#fafbfe}.card strong{display:block;color:#1d4ed8;margin-bottom:8px}
+    .notice{border-left:4px solid #f59e0b;background:#fffbeb;padding:15px 17px;border-radius:10px;color:#713f12}
+    .flow{display:flex;flex-wrap:wrap;gap:10px}.flow span{padding:10px 13px;border-radius:10px;background:#eff6ff;color:#1e40af;font-weight:650}
+    footer{text-align:center;color:#64748b;padding-top:24px;font-size:.9rem}
+    @media(max-width:600px){header{padding:28px 22px}section{padding:19px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">BT × DS · RESEARCH PROTOTYPE</div>
+      <h1>저혈당 위험 분석<br>대시보드 프로젝트</h1>
+      <p>생체 데이터와 데이터 분석을 이용해 시계열 신호를 살펴보는 연구·교육용 프로토타입입니다. 실제 의료 예측이나 경보 기능은 제공하지 않습니다.</p>
+      <a class="button" href="#system">시스템 구성 보기 ↓</a>
+    </header>
+    <section>
+      <h2>프로젝트 소개</h2>
+      <p>혈당 시계열과 함께 제공되는 생체 신호를 정리하고 시각화하는 것을 목표로 합니다. 모델 성능과 임상적 유효성은 아직 검증된 것으로 간주하지 않습니다.</p>
+      <div class="grid">
+        <div class="card"><strong>데이터 입력</strong>CSV 데이터 업로드 및 필수 열 검사</div>
+        <div class="card"><strong>전처리</strong>시간 정렬, 결측값 확인, 변화율 계산</div>
+        <div class="card"><strong>시각화</strong>혈당 및 이용 가능한 센서 데이터의 그래프 표시</div>
+      </div>
+    </section>
+    <section id="system">
+      <h2>분석 흐름</h2>
+      <div class="flow"><span>CSV 입력</span><span>품질 확인</span><span>시계열 분석</span><span>그래프·요약</span></div>
+      <p class="muted">심박수 값만으로 HRV를 계산하지 않습니다. HRV 분석에는 적절한 박동 간격 데이터와 검증된 분석 절차가 필요합니다.</p>
+    </section>
+    <section>
+      <h2>구현 화면 안내</h2>
+      <p>이 GitHub Pages는 프로젝트 소개용 정적 웹페이지입니다. CSV 업로드와 그래프를 포함한 Python 대시보드는 저장소의 <code>app.py</code>에서 실행하며, Pages 자체에서는 Python 앱을 실행할 수 없습니다.</p>
+      <div class="notice"><strong>안전 안내:</strong> 이 프로토타입은 진단, 치료 결정, 응급 대응을 위한 의료기기가 아닙니다. 실제 건강 데이터 업로드 시 개인정보 보호에 유의하세요.</div>
+    </section>
+    <footer>BT × DS · 교육 및 연구용 프로토타입</footer>
+  </main>
+</body>
+</html>
